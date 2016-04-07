@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9B196D31CB636D40085CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D21CB636D40085CFB9 /* AppDelegate.swift */; };
+		A9B196D51CB636D40085CFB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D41CB636D40085CFB9 /* ViewController.swift */; };
+		A9B196D81CB636D50085CFB9 /* HeartExtractor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D61CB636D40085CFB9 /* HeartExtractor.xcdatamodeld */; };
+		A9B196DA1CB636D50085CFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B196D91CB636D50085CFB9 /* Assets.xcassets */; };
+		A9B196DD1CB636D50085CFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B196DB1CB636D50085CFB9 /* Main.storyboard */; };
+		A9B196E81CB636D50085CFB9 /* HeartExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */; };
+		A9B196F31CB636D50085CFB9 /* HeartExtractorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9B196E41CB636D50085CFB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9B196C71CB636D40085CFB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9B196CE1CB636D40085CFB9;
+			remoteInfo = HeartExtractor;
+		};
+		A9B196EF1CB636D50085CFB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9B196C71CB636D40085CFB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9B196CE1CB636D40085CFB9;
+			remoteInfo = HeartExtractor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A9B196CF1CB636D40085CFB9 /* HeartExtractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartExtractor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B196D21CB636D40085CFB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A9B196D41CB636D40085CFB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A9B196D71CB636D40085CFB9 /* HeartExtractor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeartExtractor.xcdatamodel; sourceTree = "<group>"; };
+		A9B196D91CB636D50085CFB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9B196DC1CB636D50085CFB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9B196DE1CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartExtractorTests.swift; sourceTree = "<group>"; };
+		A9B196E91CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartExtractorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartExtractorUITests.swift; sourceTree = "<group>"; };
+		A9B196F41CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9B196CC1CB636D40085CFB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9B196E01CB636D50085CFB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9B196EB1CB636D50085CFB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9B196C61CB636D40085CFB9 = {
+			isa = PBXGroup;
+			children = (
+				A9B196D11CB636D40085CFB9 /* HeartExtractor */,
+				A9B196E61CB636D50085CFB9 /* HeartExtractorTests */,
+				A9B196F11CB636D50085CFB9 /* HeartExtractorUITests */,
+				A9B196D01CB636D40085CFB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9B196D01CB636D40085CFB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9B196CF1CB636D40085CFB9 /* HeartExtractor.app */,
+				A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */,
+				A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9B196D11CB636D40085CFB9 /* HeartExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				A9B196D21CB636D40085CFB9 /* AppDelegate.swift */,
+				A9B196D41CB636D40085CFB9 /* ViewController.swift */,
+				A9B196D91CB636D50085CFB9 /* Assets.xcassets */,
+				A9B196DB1CB636D50085CFB9 /* Main.storyboard */,
+				A9B196DE1CB636D50085CFB9 /* Info.plist */,
+				A9B196D61CB636D40085CFB9 /* HeartExtractor.xcdatamodeld */,
+			);
+			path = HeartExtractor;
+			sourceTree = "<group>";
+		};
+		A9B196E61CB636D50085CFB9 /* HeartExtractorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */,
+				A9B196E91CB636D50085CFB9 /* Info.plist */,
+			);
+			path = HeartExtractorTests;
+			sourceTree = "<group>";
+		};
+		A9B196F11CB636D50085CFB9 /* HeartExtractorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */,
+				A9B196F41CB636D50085CFB9 /* Info.plist */,
+			);
+			path = HeartExtractorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9B196CE1CB636D40085CFB9 /* HeartExtractor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9B196F71CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractor" */;
+			buildPhases = (
+				A9B196CB1CB636D40085CFB9 /* Sources */,
+				A9B196CC1CB636D40085CFB9 /* Frameworks */,
+				A9B196CD1CB636D40085CFB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeartExtractor;
+			productName = HeartExtractor;
+			productReference = A9B196CF1CB636D40085CFB9 /* HeartExtractor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9B196E21CB636D50085CFB9 /* HeartExtractorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9B196FA1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorTests" */;
+			buildPhases = (
+				A9B196DF1CB636D50085CFB9 /* Sources */,
+				A9B196E01CB636D50085CFB9 /* Frameworks */,
+				A9B196E11CB636D50085CFB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9B196E51CB636D50085CFB9 /* PBXTargetDependency */,
+			);
+			name = HeartExtractorTests;
+			productName = HeartExtractorTests;
+			productReference = A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A9B196ED1CB636D50085CFB9 /* HeartExtractorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9B196FD1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorUITests" */;
+			buildPhases = (
+				A9B196EA1CB636D50085CFB9 /* Sources */,
+				A9B196EB1CB636D50085CFB9 /* Frameworks */,
+				A9B196EC1CB636D50085CFB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9B196F01CB636D50085CFB9 /* PBXTargetDependency */,
+			);
+			name = HeartExtractorUITests;
+			productName = HeartExtractorUITests;
+			productReference = A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9B196C71CB636D40085CFB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Seungho Kim";
+				TargetAttributes = {
+					A9B196CE1CB636D40085CFB9 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A9B196E21CB636D50085CFB9 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A9B196CE1CB636D40085CFB9;
+					};
+					A9B196ED1CB636D50085CFB9 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A9B196CE1CB636D40085CFB9;
+					};
+				};
+			};
+			buildConfigurationList = A9B196CA1CB636D40085CFB9 /* Build configuration list for PBXProject "HeartExtractor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9B196C61CB636D40085CFB9;
+			productRefGroup = A9B196D01CB636D40085CFB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9B196CE1CB636D40085CFB9 /* HeartExtractor */,
+				A9B196E21CB636D50085CFB9 /* HeartExtractorTests */,
+				A9B196ED1CB636D50085CFB9 /* HeartExtractorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9B196CD1CB636D40085CFB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B196DA1CB636D50085CFB9 /* Assets.xcassets in Resources */,
+				A9B196DD1CB636D50085CFB9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9B196E11CB636D50085CFB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9B196EC1CB636D50085CFB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9B196CB1CB636D40085CFB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B196D51CB636D40085CFB9 /* ViewController.swift in Sources */,
+				A9B196D81CB636D50085CFB9 /* HeartExtractor.xcdatamodeld in Sources */,
+				A9B196D31CB636D40085CFB9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9B196DF1CB636D50085CFB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B196E81CB636D50085CFB9 /* HeartExtractorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9B196EA1CB636D50085CFB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B196F31CB636D50085CFB9 /* HeartExtractorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9B196E51CB636D50085CFB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9B196CE1CB636D40085CFB9 /* HeartExtractor */;
+			targetProxy = A9B196E41CB636D50085CFB9 /* PBXContainerItemProxy */;
+		};
+		A9B196F01CB636D50085CFB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9B196CE1CB636D40085CFB9 /* HeartExtractor */;
+			targetProxy = A9B196EF1CB636D50085CFB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A9B196DB1CB636D50085CFB9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9B196DC1CB636D50085CFB9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9B196F51CB636D50085CFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9B196F61CB636D50085CFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A9B196F81CB636D50085CFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeartExtractor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9B196F91CB636D50085CFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeartExtractor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A9B196FB1CB636D50085CFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeartExtractorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeartExtractor.app/Contents/MacOS/HeartExtractor";
+			};
+			name = Debug;
+		};
+		A9B196FC1CB636D50085CFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeartExtractorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeartExtractor.app/Contents/MacOS/HeartExtractor";
+			};
+			name = Release;
+		};
+		A9B196FE1CB636D50085CFB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeartExtractorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HeartExtractor;
+			};
+			name = Debug;
+		};
+		A9B196FF1CB636D50085CFB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeartExtractorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HeartExtractor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9B196CA1CB636D40085CFB9 /* Build configuration list for PBXProject "HeartExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B196F51CB636D50085CFB9 /* Debug */,
+				A9B196F61CB636D50085CFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9B196F71CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B196F81CB636D50085CFB9 /* Debug */,
+				A9B196F91CB636D50085CFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A9B196FA1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B196FB1CB636D50085CFB9 /* Debug */,
+				A9B196FC1CB636D50085CFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A9B196FD1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B196FE1CB636D50085CFB9 /* Debug */,
+				A9B196FF1CB636D50085CFB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A9B196D61CB636D40085CFB9 /* HeartExtractor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A9B196D71CB636D40085CFB9 /* HeartExtractor.xcdatamodel */,
+			);
+			currentVersion = A9B196D71CB636D40085CFB9 /* HeartExtractor.xcdatamodel */;
+			path = HeartExtractor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A9B196C71CB636D40085CFB9 /* Project object */;
+}
