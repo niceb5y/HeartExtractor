@@ -7,16 +7,29 @@
 //
 
 import Cocoa
+import SwifterMac
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+	func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+		return true
+	}
 
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		// Insert code here to initialize your application
+		NSAppleEventManager.sharedAppleEventManager().setEventHandler(self,
+			andSelector: #selector(handleEvent(_:withReplyEvent:)),
+			forEventClass: AEEventClass(kInternetEventClass),
+			andEventID: AEEventID(kAEGetURL))
+		LSSetDefaultHandlerForURLScheme("hext",
+			NSBundle.mainBundle().bundleIdentifier! as NSString as CFString)
 	}
 
+	func handleEvent(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {
+		Swifter.handleOpenURL(NSURL(string: event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))!.stringValue!)!)
+	}
+	
 	func applicationWillTerminate(aNotification: NSNotification) {
 		// Insert code here to tear down your application
 	}

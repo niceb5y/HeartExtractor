@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,16 +642,16 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="HeartExtractor" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="HeartExtractor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -667,11 +668,86 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="HeartExtractor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iGw-K8-hEE">
+                                <rect key="frame" x="202" y="222" width="77" height="32"/>
+                                <buttonCell key="cell" type="push" title="Tweet" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m3o-wA-xa7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="tweetButton_Click:" target="XfG-lQ-9wD" id="VCB-bj-U50"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NgW-Q4-jD9">
+                                <rect key="frame" x="137" y="222" width="65" height="32"/>
+                                <buttonCell key="cell" type="push" title="Like" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kwR-lr-Bz2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="likeButton_Click:" target="XfG-lQ-9wD" id="JhG-i7-rhL"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vbA-Re-cvq">
+                                <rect key="frame" x="279" y="222" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rw7-po-0sE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetButton_Click:" target="XfG-lQ-9wD" id="KfS-cb-O9c"/>
+                                </connections>
+                            </button>
+                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU3-X7-hBF">
+                                <rect key="frame" x="19" y="20" width="440" height="189"/>
+                                <clipView key="contentView" id="Mn3-XI-c61">
+                                    <rect key="frame" x="1" y="1" width="438" height="187"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="xzu-F0-IAQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="187"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="438" height="187"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="438" height="187"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="0S1-IC-pfW">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="YhU-bx-Xq1">
+                                    <rect key="frame" x="424" y="1" width="15" height="187"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="yU3-X7-hBF" firstAttribute="top" secondItem="vbA-Re-cvq" secondAttribute="bottom" constant="20" id="F4U-US-pug"/>
+                            <constraint firstItem="iGw-K8-hEE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="SfQ-Uy-Rix"/>
+                            <constraint firstItem="iGw-K8-hEE" firstAttribute="leading" secondItem="NgW-Q4-jD9" secondAttribute="trailing" constant="12" id="Vxo-aq-TWS"/>
+                            <constraint firstAttribute="bottom" secondItem="yU3-X7-hBF" secondAttribute="bottom" constant="20" id="aHA-p4-kB0"/>
+                            <constraint firstItem="vbA-Re-cvq" firstAttribute="leading" secondItem="iGw-K8-hEE" secondAttribute="trailing" constant="12" id="eQq-ET-lFX"/>
+                            <constraint firstItem="iGw-K8-hEE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fzl-o4-fia"/>
+                            <constraint firstAttribute="trailing" secondItem="yU3-X7-hBF" secondAttribute="trailing" constant="20" id="mx5-Lm-NwS"/>
+                            <constraint firstItem="vbA-Re-cvq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="t2V-fL-ccX"/>
+                            <constraint firstItem="NgW-Q4-jD9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="tbt-jp-XcB"/>
+                            <constraint firstItem="yU3-X7-hBF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="wxv-0N-ca5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="xzu-F0-IAQ" id="wyI-8H-tnH"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

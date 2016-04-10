@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A906E6F91CBA500F00B03D6A /* TwitterClientDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A906E6F81CBA500F00B03D6A /* TwitterClientDataController.swift */; };
+		A94721F41CBA5C2E00B73CF0 /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94721F21CBA5C2E00B73CF0 /* HistoryEntity.swift */; };
+		A96D5FA11CB6AE8D00AA8AD5 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */; };
+		A96D5FA21CB6AE8D00AA8AD5 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A96D5FA81CB78E7100AA8AD5 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */; };
+		A96D5FA91CB78E7100AA8AD5 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A96D5FAB1CB78FAF00AA8AD5 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D5FAA1CB78FAF00AA8AD5 /* TwitterClient.swift */; };
 		A9B196D31CB636D40085CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D21CB636D40085CFB9 /* AppDelegate.swift */; };
 		A9B196D51CB636D40085CFB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D41CB636D40085CFB9 /* ViewController.swift */; };
 		A9B196D81CB636D50085CFB9 /* HeartExtractor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D61CB636D40085CFB9 /* HeartExtractor.xcdatamodeld */; };
@@ -14,6 +21,11 @@
 		A9B196DD1CB636D50085CFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B196DB1CB636D50085CFB9 /* Main.storyboard */; };
 		A9B196E81CB636D50085CFB9 /* HeartExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */; };
 		A9B196F31CB636D50085CFB9 /* HeartExtractorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */; };
+		A9CB24901CB95EC10032B709 /* TwitterClientAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB248F1CB95EC10032B709 /* TwitterClientAuth.swift */; };
+		A9CB24921CB95F4C0032B709 /* TwitterClientEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24911CB95F4C0032B709 /* TwitterClientEncryption.swift */; };
+		A9CB24941CB95FB20032B709 /* TwitterClientDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24931CB95FB20032B709 /* TwitterClientDownloader.swift */; };
+		A9CB24961CB9604F0032B709 /* TwitterClientTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24951CB9604F0032B709 /* TwitterClientTweet.swift */; };
+		A9CB24981CB9608B0032B709 /* TwitterClientExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24971CB9608B0032B709 /* TwitterClientExtractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +45,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A96D5FA31CB6AE8D00AA8AD5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A96D5FA21CB6AE8D00AA8AD5 /* SwifterMac.framework in Embed Frameworks */,
+				A96D5FA91CB78E7100AA8AD5 /* CryptoSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A906E6F81CBA500F00B03D6A /* TwitterClientDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientDataController.swift; sourceTree = "<group>"; };
+		A94721F21CBA5C2E00B73CF0 /* HistoryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntity.swift; sourceTree = "<group>"; };
+		A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwifterMac.framework; sourceTree = "<group>"; };
+		A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		A96D5FAA1CB78FAF00AA8AD5 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		A9B196CF1CB636D40085CFB9 /* HeartExtractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartExtractor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B196D21CB636D40085CFB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9B196D41CB636D40085CFB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +79,11 @@
 		A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartExtractorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartExtractorUITests.swift; sourceTree = "<group>"; };
 		A9B196F41CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9CB248F1CB95EC10032B709 /* TwitterClientAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientAuth.swift; sourceTree = "<group>"; };
+		A9CB24911CB95F4C0032B709 /* TwitterClientEncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientEncryption.swift; sourceTree = "<group>"; };
+		A9CB24931CB95FB20032B709 /* TwitterClientDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientDownloader.swift; sourceTree = "<group>"; };
+		A9CB24951CB9604F0032B709 /* TwitterClientTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientTweet.swift; sourceTree = "<group>"; };
+		A9CB24971CB9608B0032B709 /* TwitterClientExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientExtractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96D5FA11CB6AE8D00AA8AD5 /* SwifterMac.framework in Frameworks */,
+				A96D5FA81CB78E7100AA8AD5 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9200C981CBA3EA700CBF725 /* DataEntity */ = {
+			isa = PBXGroup;
+			children = (
+				A94721F21CBA5C2E00B73CF0 /* HistoryEntity.swift */,
+			);
+			name = DataEntity;
+			sourceTree = "<group>";
+		};
 		A9B196C61CB636D40085CFB9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +146,14 @@
 			children = (
 				A9B196D21CB636D40085CFB9 /* AppDelegate.swift */,
 				A9B196D41CB636D40085CFB9 /* ViewController.swift */,
+				A9200C981CBA3EA700CBF725 /* DataEntity */,
+				A9B5D0EC1CB95E820003B39B /* TwitterClient */,
 				A9B196D91CB636D50085CFB9 /* Assets.xcassets */,
 				A9B196DB1CB636D50085CFB9 /* Main.storyboard */,
 				A9B196DE1CB636D50085CFB9 /* Info.plist */,
 				A9B196D61CB636D40085CFB9 /* HeartExtractor.xcdatamodeld */,
+				A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */,
+				A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */,
 			);
 			path = HeartExtractor;
 			sourceTree = "<group>";
@@ -125,6 +176,20 @@
 			path = HeartExtractorUITests;
 			sourceTree = "<group>";
 		};
+		A9B5D0EC1CB95E820003B39B /* TwitterClient */ = {
+			isa = PBXGroup;
+			children = (
+				A96D5FAA1CB78FAF00AA8AD5 /* TwitterClient.swift */,
+				A9CB248F1CB95EC10032B709 /* TwitterClientAuth.swift */,
+				A906E6F81CBA500F00B03D6A /* TwitterClientDataController.swift */,
+				A9CB24931CB95FB20032B709 /* TwitterClientDownloader.swift */,
+				A9CB24911CB95F4C0032B709 /* TwitterClientEncryption.swift */,
+				A9CB24971CB9608B0032B709 /* TwitterClientExtractor.swift */,
+				A9CB24951CB9604F0032B709 /* TwitterClientTweet.swift */,
+			);
+			name = TwitterClient;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +200,7 @@
 				A9B196CB1CB636D40085CFB9 /* Sources */,
 				A9B196CC1CB636D40085CFB9 /* Frameworks */,
 				A9B196CD1CB636D40085CFB9 /* Resources */,
+				A96D5FA31CB6AE8D00AA8AD5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,9 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9CB24961CB9604F0032B709 /* TwitterClientTweet.swift in Sources */,
 				A9B196D51CB636D40085CFB9 /* ViewController.swift in Sources */,
+				A9CB24941CB95FB20032B709 /* TwitterClientDownloader.swift in Sources */,
+				A906E6F91CBA500F00B03D6A /* TwitterClientDataController.swift in Sources */,
 				A9B196D81CB636D50085CFB9 /* HeartExtractor.xcdatamodeld in Sources */,
 				A9B196D31CB636D40085CFB9 /* AppDelegate.swift in Sources */,
+				A9CB24901CB95EC10032B709 /* TwitterClientAuth.swift in Sources */,
+				A9CB24921CB95F4C0032B709 /* TwitterClientEncryption.swift in Sources */,
+				A96D5FAB1CB78FAF00AA8AD5 /* TwitterClient.swift in Sources */,
+				A94721F41CBA5C2E00B73CF0 /* HistoryEntity.swift in Sources */,
+				A9CB24981CB9608B0032B709 /* TwitterClientExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +465,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HeartExtractor",
+				);
 				INFOPLIST_FILE = HeartExtractor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractor;
@@ -403,6 +482,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HeartExtractor",
+				);
 				INFOPLIST_FILE = HeartExtractor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractor;
@@ -479,6 +563,7 @@
 				A9B196F91CB636D50085CFB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9B196FA1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +572,7 @@
 				A9B196FC1CB636D50085CFB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9B196FD1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorUITests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +581,7 @@
 				A9B196FF1CB636D50085CFB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
