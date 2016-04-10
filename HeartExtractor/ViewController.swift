@@ -3,7 +3,7 @@
 //  HeartExtractor
 //
 //  Created by 김승호 on 2016. 4. 7..
-//  Copyright © 2016년 Seungho Kim. All rights reserved.
+//  Copyright © 2016 Seungho Kim. All rights reserved.
 //
 
 import Cocoa
@@ -37,7 +37,7 @@ class ViewController: NSViewController {
 	
 	@IBAction func likeButton_Click(sender: AnyObject) {
 		printLog("[target: Like]")
-		TwitterClient.downloadFiles(TwitterClient.Target.Favorite, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
+		TwitterClient.downloadFiles(TwitterClient.Target.Favorites, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
 	}
 	
 	@IBAction func tweetButton_Click(sender: AnyObject) {

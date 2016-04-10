@@ -3,13 +3,23 @@
 //  HeartExtractor
 //
 //  Created by 김승호 on 2016. 4. 10..
-//  Copyright © 2016년 Seungho Kim. All rights reserved.
+//  Copyright © 2016 Seungho Kim. All rights reserved.
 //
 
 import Cocoa
 
 extension TwitterClient {
+	/**
+	Downloader class for TwitterClient
+	*/
 	class Downloader: NSObject {
+		
+		/**
+		Download file from URL
+		- Parameters:
+			- url: URL to download
+			- completion: Things to do after download complete
+		*/
 		static func downloadFile(url: NSURL, completion:(path:String, error:NSError!) -> Void) {
 			let documentsUrl =  NSFileManager.defaultManager().URLsForDirectory(.DownloadsDirectory, inDomains: .UserDomainMask).first! as NSURL
 			let urls = url.absoluteString.stringByReplacingOccurrencesOfString(":orig", withString: "", options: NSStringCompareOptions.BackwardsSearch, range: nil)

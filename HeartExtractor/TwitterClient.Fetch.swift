@@ -10,18 +10,35 @@ import Cocoa
 import SwifterMac
 
 extension TwitterClient {
+	/**
+	Fetch class for TwitterClient
+	*/
 	class Fetch: NSObject {
+		/**
+		Fetch target
+		- parameters:
+			- target: Target to fetch
+			- success: Things to do after fetch
+		*/
 		static func fetch(target:Target, success:((Array<Tweet>) -> Void)) {
 			switch target {
 			case .Tweets:
 				fetch(target, iteration: 15, maxID: nil, success: success)
 				break
-			case .Favorite:
+			case .Favorites:
 				fetch(target, iteration: 15, maxID: nil, success: success)
 				break
 			}
 		}
 		
+		/**
+		Fetch target with recursive iterations
+		- parameters:
+			- target: Target to fetch
+			- iteration: Number to iterate
+			- maxID: Maximum ID of tweet
+			- success: Things to do after fetch
+		*/
 		static func fetch(target:Target, iteration:Int, maxID:String?, success:((Array<Tweet>) -> Void)) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
 			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
@@ -62,7 +79,7 @@ extension TwitterClient {
 				}
 			}
 			switch target {
-			case .Favorite:
+			case .Favorites:
 				swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: maxID, success: fetchTweet, failure: handleError)
 				break
 			case .Tweets:

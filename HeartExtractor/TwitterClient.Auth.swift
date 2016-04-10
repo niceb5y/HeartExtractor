@@ -3,14 +3,20 @@
 //  HeartExtractor
 //
 //  Created by 김승호 on 2016. 4. 10..
-//  Copyright © 2016년 Seungho Kim. All rights reserved.
+//  Copyright © 2016 Seungho Kim. All rights reserved.
 //
 
 import Cocoa
 import SwifterMac
 
 extension TwitterClient {
+	/**
+	Authentication class for TwitterClient
+	*/
 	class Auth: NSObject {
+		/**
+		Twitter OAuth Token
+		*/
 		static var token: SwifterCredential.OAuthAccessToken? {
 			get {
 				let defaults = NSUserDefaults.standardUserDefaults()
@@ -26,6 +32,9 @@ extension TwitterClient {
 			}
 		}
 		
+		/**
+		Create new OAuth Token
+		*/
 		static func createToken() {
 			let swifter = Swifter(consumerKey: TwitterClient.CONSUMER_KEY, consumerSecret: TwitterClient.CONSUMER_SECRET)
 			swifter.authorizeWithCallbackURL(NSURL(string: "hext://success")!,success: { (accessToken, response) in
@@ -40,6 +49,9 @@ extension TwitterClient {
 			})
 		}
 		
+		/**
+		Clear OAuth Token
+		*/
 		static func clearToken() {
 			let defaults = NSUserDefaults.standardUserDefaults()
 			defaults.removeObjectForKey("twtKey")
