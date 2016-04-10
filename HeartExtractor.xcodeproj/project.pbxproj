@@ -20,7 +20,6 @@
 		A9B196DA1CB636D50085CFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B196D91CB636D50085CFB9 /* Assets.xcassets */; };
 		A9B196DD1CB636D50085CFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B196DB1CB636D50085CFB9 /* Main.storyboard */; };
 		A9B196E81CB636D50085CFB9 /* HeartExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */; };
-		A9B196F31CB636D50085CFB9 /* HeartExtractorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */; };
 		A9CB24901CB95EC10032B709 /* TwitterClientAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB248F1CB95EC10032B709 /* TwitterClientAuth.swift */; };
 		A9CB24921CB95F4C0032B709 /* TwitterClientEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24911CB95F4C0032B709 /* TwitterClientEncryption.swift */; };
 		A9CB24941CB95FB20032B709 /* TwitterClientDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24931CB95FB20032B709 /* TwitterClientDownloader.swift */; };
@@ -30,13 +29,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		A9B196E41CB636D50085CFB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9B196C71CB636D40085CFB9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A9B196CE1CB636D40085CFB9;
-			remoteInfo = HeartExtractor;
-		};
-		A9B196EF1CB636D50085CFB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9B196C71CB636D40085CFB9 /* Project object */;
 			proxyType = 1;
@@ -76,9 +68,6 @@
 		A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartExtractorTests.swift; sourceTree = "<group>"; };
 		A9B196E91CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartExtractorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartExtractorUITests.swift; sourceTree = "<group>"; };
-		A9B196F41CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9CAB65E1CBA84DC0091CDE5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		A9CB248F1CB95EC10032B709 /* TwitterClientAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientAuth.swift; sourceTree = "<group>"; };
 		A9CB24911CB95F4C0032B709 /* TwitterClientEncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientEncryption.swift; sourceTree = "<group>"; };
@@ -104,13 +93,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9B196EB1CB636D50085CFB9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,7 +109,6 @@
 			children = (
 				A9B196D11CB636D40085CFB9 /* HeartExtractor */,
 				A9B196E61CB636D50085CFB9 /* HeartExtractorTests */,
-				A9B196F11CB636D50085CFB9 /* HeartExtractorUITests */,
 				A9B196D01CB636D40085CFB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,7 +118,6 @@
 			children = (
 				A9B196CF1CB636D40085CFB9 /* HeartExtractor.app */,
 				A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */,
-				A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,15 +146,6 @@
 				A9B196E91CB636D50085CFB9 /* Info.plist */,
 			);
 			path = HeartExtractorTests;
-			sourceTree = "<group>";
-		};
-		A9B196F11CB636D50085CFB9 /* HeartExtractorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A9B196F21CB636D50085CFB9 /* HeartExtractorUITests.swift */,
-				A9B196F41CB636D50085CFB9 /* Info.plist */,
-			);
-			path = HeartExtractorUITests;
 			sourceTree = "<group>";
 		};
 		A9B5D0EC1CB95E820003B39B /* TwitterClient */ = {
@@ -231,24 +202,6 @@
 			productReference = A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A9B196ED1CB636D50085CFB9 /* HeartExtractorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9B196FD1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorUITests" */;
-			buildPhases = (
-				A9B196EA1CB636D50085CFB9 /* Sources */,
-				A9B196EB1CB636D50085CFB9 /* Frameworks */,
-				A9B196EC1CB636D50085CFB9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A9B196F01CB636D50085CFB9 /* PBXTargetDependency */,
-			);
-			name = HeartExtractorUITests;
-			productName = HeartExtractorUITests;
-			productReference = A9B196EE1CB636D50085CFB9 /* HeartExtractorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -263,10 +216,6 @@
 						CreatedOnToolsVersion = 7.3;
 					};
 					A9B196E21CB636D50085CFB9 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = A9B196CE1CB636D40085CFB9;
-					};
-					A9B196ED1CB636D50085CFB9 = {
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = A9B196CE1CB636D40085CFB9;
 					};
@@ -287,7 +236,6 @@
 			targets = (
 				A9B196CE1CB636D40085CFB9 /* HeartExtractor */,
 				A9B196E21CB636D50085CFB9 /* HeartExtractorTests */,
-				A9B196ED1CB636D50085CFB9 /* HeartExtractorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -303,13 +251,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A9B196E11CB636D50085CFB9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9B196EC1CB636D50085CFB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,14 +302,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9B196EA1CB636D50085CFB9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9B196F31CB636D50085CFB9 /* HeartExtractorUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -376,11 +309,6 @@
 			isa = PBXTargetDependency;
 			target = A9B196CE1CB636D40085CFB9 /* HeartExtractor */;
 			targetProxy = A9B196E41CB636D50085CFB9 /* PBXContainerItemProxy */;
-		};
-		A9B196F01CB636D50085CFB9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A9B196CE1CB636D40085CFB9 /* HeartExtractor */;
-			targetProxy = A9B196EF1CB636D50085CFB9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -539,30 +467,6 @@
 			};
 			name = Release;
 		};
-		A9B196FE1CB636D50085CFB9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HeartExtractorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = HeartExtractor;
-			};
-			name = Debug;
-		};
-		A9B196FF1CB636D50085CFB9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HeartExtractorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.niceb5y.HeartExtractorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = HeartExtractor;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,15 +493,6 @@
 			buildConfigurations = (
 				A9B196FB1CB636D50085CFB9 /* Debug */,
 				A9B196FC1CB636D50085CFB9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A9B196FD1CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9B196FE1CB636D50085CFB9 /* Debug */,
-				A9B196FF1CB636D50085CFB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

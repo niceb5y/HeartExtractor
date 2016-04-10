@@ -58,7 +58,7 @@ extension TwitterClient {
 					alert.informativeText = "try it later."
 					alert.runModal()
 				} else {
-					print(error)
+					debugPrint(error)
 				}
 			}
 			switch target {

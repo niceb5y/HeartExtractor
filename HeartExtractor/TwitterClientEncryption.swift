@@ -18,7 +18,7 @@ extension TwitterClient {
 			do {
 				return try string.encrypt(AES(key: KEY, iv: IV)).toBase64()!
 			} catch let error as NSError {
-				print(error)
+				debugPrint(error)
 			}
 			return nil
 		}
@@ -27,7 +27,7 @@ extension TwitterClient {
 			do {
 				return try string.decryptBase64ToString(AES(key: KEY, iv: IV))
 			} catch let error as NSError {
-				print(error)
+				debugPrint(error)
 			}
 			return nil
 		}

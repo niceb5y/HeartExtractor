@@ -18,7 +18,7 @@ extension TwitterClient {
 				let fetchedHistoryEntities = try managedObjectContext.executeFetchRequest(fetch) as! [HistoryEntity]
 				return fetchedHistoryEntities
 			} catch let error as NSError {
-				print(error)
+				debugPrint(error)
 			}
 			return []
 		}
@@ -30,7 +30,7 @@ extension TwitterClient {
 				do {
 					try managedObjectContext.save()
 				} catch let error as NSError {
-					print(error)
+					debugPrint(error)
 				}
 		}
 		
@@ -42,7 +42,7 @@ extension TwitterClient {
 			do {
 				try managedObjectContext.save()
 			} catch let error as NSError {
-				print(error)
+				debugPrint(error)
 			}
 		}
 		
@@ -53,7 +53,7 @@ extension TwitterClient {
 				let fetchedHistoryEntities = try managedObjectContext.executeFetchRequest(fetch) as! [HistoryEntity]
 				return fetchedHistoryEntities.count > 0
 			} catch let error as NSError {
-				print(error)
+				debugPrint(error)
 			}
 			return false
 		}

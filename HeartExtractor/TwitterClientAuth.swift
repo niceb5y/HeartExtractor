@@ -36,7 +36,7 @@ extension TwitterClient {
 					defaults.setObject(secret, forKey: "twtSecret")
 					defaults.synchronize()
 				}, failure: { (error) in
-					print(error)
+					debugPrint(error)
 			})
 		}
 		
