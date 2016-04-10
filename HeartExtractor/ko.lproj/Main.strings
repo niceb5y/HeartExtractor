@@ -1,0 +1,27 @@
+
+/* Class = "NSMenuItem"; title = "HeartExtractor"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "HeartExtractor";
+
+/* Class = "NSMenuItem"; title = "Quit HeartExtractor"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "HeartExtractor 종료";
+
+/* Class = "NSMenuItem"; title = "About HeartExtractor"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "HeartExtractor에 대하여";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "메인 메뉴";
+
+/* Class = "NSMenuItem"; title = "Clear Session"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "세션 초기화";
+
+/* Class = "NSWindow"; title = "HeartExtractor"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "HeartExtractor";
+
+/* Class = "NSButtonCell"; title = "Like"; ObjectID = "kwR-lr-Bz2"; */
+"kwR-lr-Bz2.title" = "마음";
+
+/* Class = "NSButtonCell"; title = "Tweet"; ObjectID = "m3o-wA-xa7"; */
+"m3o-wA-xa7.title" = "트윗";
+
+/* Class = "NSMenu"; title = "HeartExtractor"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "HeartExtractor";

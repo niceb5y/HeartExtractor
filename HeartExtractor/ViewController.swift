@@ -45,7 +45,7 @@ class ViewController: NSViewController {
 		TwitterClient.downloadFiles(TwitterClient.Target.Tweets, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
 	}
 	
-	@IBAction func resetButton_Click(sender: AnyObject) {
+	@IBAction func clearSession(sender: AnyObject) {
 		TwitterClient.Auth.clearToken()
 		TwitterClient.Auth.createToken()
 		TwitterClient.DataController.deleteAll()
