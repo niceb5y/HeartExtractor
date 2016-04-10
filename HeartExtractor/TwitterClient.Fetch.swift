@@ -10,22 +10,22 @@ import Cocoa
 import SwifterMac
 
 extension TwitterClient {
-	class Extractor: NSObject {
-		static func extract(target:Target, success:((Array<Tweet>) -> Void)) {
+	class Fetch: NSObject {
+		static func fetch(target:Target, success:((Array<Tweet>) -> Void)) {
 			switch target {
 			case .Tweets:
-				extract(target, iteration: 15, maxID: nil, success: success)
+				fetch(target, iteration: 15, maxID: nil, success: success)
 				break
 			case .Favorite:
-				extract(target, iteration: 15, maxID: nil, success: success)
+				fetch(target, iteration: 15, maxID: nil, success: success)
 				break
 			}
 		}
 		
-		static func extract(target:Target, iteration:Int, maxID:String?, success:((Array<Tweet>) -> Void)) {
+		static func fetch(target:Target, iteration:Int, maxID:String?, success:((Array<Tweet>) -> Void)) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
 			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
-			let fetch: ([JSONValue]?) -> () = {
+			let fetchTweet: ([JSONValue]?) -> () = {
 				guard let statuses = $0 else { return }
 				let list: Array<Tweet> = statuses.map { (twt) in
 					let tweet = Tweet()
@@ -46,7 +46,7 @@ extension TwitterClient {
 					return tweet
 				}
 				if iteration > 0 && list.last?.id != maxID {
-					extract(target, iteration: iteration - 1, maxID: list.last?.id, success: success)
+					fetch(target, iteration: iteration - 1, maxID: list.last?.id, success: success)
 					success(list)
 				}
 			}
@@ -63,10 +63,10 @@ extension TwitterClient {
 			}
 			switch target {
 			case .Favorite:
-				swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: maxID, success: fetch, failure: handleError)
+				swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: maxID, success: fetchTweet, failure: handleError)
 				break
 			case .Tweets:
-				swifter.getStatusesHomeTimelineWithCount(200, sinceID: nil, maxID: maxID, trimUser: nil, contributorDetails: nil, includeEntities: nil, success: fetch, failure: handleError)
+				swifter.getStatusesHomeTimelineWithCount(200, sinceID: nil, maxID: maxID, trimUser: nil, contributorDetails: nil, includeEntities: nil, success: fetchTweet, failure: handleError)
 				break
 			}
 		}

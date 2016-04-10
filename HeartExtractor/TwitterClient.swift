@@ -37,6 +37,6 @@ class TwitterClient: NSObject {
 				completeFetch(tweet)
 			}
 		}
-		Extractor.extract(target, success: download)
+		Fetch.fetch(target, success: download)
 	}
 }

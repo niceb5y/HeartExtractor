@@ -24,7 +24,7 @@
 		A9CB24921CB95F4C0032B709 /* TwitterClient.Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */; };
 		A9CB24941CB95FB20032B709 /* TwitterClient.Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */; };
 		A9CB24961CB9604F0032B709 /* TwitterClient.Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24951CB9604F0032B709 /* TwitterClient.Tweet.swift */; };
-		A9CB24981CB9608B0032B709 /* TwitterClient.Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24971CB9608B0032B709 /* TwitterClient.Extractor.swift */; };
+		A9CB24981CB9608B0032B709 /* TwitterClient.Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,7 @@
 		A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Encryption.swift; sourceTree = "<group>"; };
 		A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Downloader.swift; sourceTree = "<group>"; };
 		A9CB24951CB9604F0032B709 /* TwitterClient.Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Tweet.swift; sourceTree = "<group>"; };
-		A9CB24971CB9608B0032B709 /* TwitterClient.Extractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Extractor.swift; sourceTree = "<group>"; };
+		A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Fetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 				A906E6F81CBA500F00B03D6A /* TwitterClient.DataController.swift */,
 				A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */,
 				A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */,
-				A9CB24971CB9608B0032B709 /* TwitterClient.Extractor.swift */,
+				A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */,
 				A9CB24951CB9604F0032B709 /* TwitterClient.Tweet.swift */,
 			);
 			name = TwitterClient;
@@ -290,7 +290,7 @@
 				A9CB24921CB95F4C0032B709 /* TwitterClient.Encryption.swift in Sources */,
 				A96D5FAB1CB78FAF00AA8AD5 /* TwitterClient.swift in Sources */,
 				A94721F41CBA5C2E00B73CF0 /* HistoryEntity.swift in Sources */,
-				A9CB24981CB9608B0032B709 /* TwitterClient.Extractor.swift in Sources */,
+				A9CB24981CB9608B0032B709 /* TwitterClient.Fetch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
