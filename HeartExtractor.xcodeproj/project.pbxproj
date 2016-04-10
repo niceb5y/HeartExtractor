@@ -198,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9B196F71CB636D50085CFB9 /* Build configuration list for PBXNativeTarget "HeartExtractor" */;
 			buildPhases = (
+				A9CAB65F1CBA87EB0091CDE5 /* ShellScript */,
 				A9B196CB1CB636D40085CFB9 /* Sources */,
 				A9B196CC1CB636D40085CFB9 /* Frameworks */,
 				A9B196CD1CB636D40085CFB9 /* Resources */,
@@ -316,6 +317,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9CAB65F1CBA87EB0091CDE5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9B196CB1CB636D40085CFB9 /* Sources */ = {
