@@ -36,6 +36,7 @@ class TwitterClient: NSObject {
 		let download:(Array<Tweet>) -> () = {
 			let tweets = $0
 			for tweet in tweets {
+				completeFetch(tweet)
 				for url in tweet.urls {
 					let urls = url.absoluteString
 					if urls.hasPrefix("http://pbs.twimg.com/") {
@@ -50,7 +51,6 @@ class TwitterClient: NSObject {
 						}
 					}
 				}
-				completeFetch(tweet)
 			}
 		}
 		Fetch.fetch(target, success: download)

@@ -11,6 +11,7 @@ import SwifterMac
 
 class ViewController: NSViewController {
 	@IBOutlet var textView: NSTextView!
+	@IBOutlet weak var scrollView: NSScrollView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,7 +21,8 @@ class ViewController: NSViewController {
 	}
 	
 	func printLog(string:String) {
-		textView.string? = string + "\n\n" + textView.string!
+		textView.string? += string + "\n\n"
+		scrollToBottom()
 	}
 	
 	func completeFetch(tweet:TwitterClient.Tweet) {
@@ -33,6 +35,19 @@ class ViewController: NSViewController {
 	
 	func skipDownload(string:String) {
 		printLog("[File skipped: \(string)]")
+	}
+	
+	func scrollToBottom() {
+		let newScrollOrigin:NSPoint?
+		guard let view = scrollView.documentView else {
+			return
+		}
+		if view.flipped! {
+			newScrollOrigin = NSMakePoint(0.0, NSMaxY(view.frame))
+		} else {
+			newScrollOrigin = NSMakePoint(0.0, 0.0)
+		}
+		view.scrollPoint(newScrollOrigin!)
 	}
 	
 	@IBAction func likeButton_Click(sender: AnyObject) {

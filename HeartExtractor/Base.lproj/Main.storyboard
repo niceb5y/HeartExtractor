@@ -147,6 +147,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="yU3-X7-hBF" id="kGa-tC-J9P"/>
                         <outlet property="textView" destination="xzu-F0-IAQ" id="wyI-8H-tnH"/>
                     </connections>
                 </viewController>
