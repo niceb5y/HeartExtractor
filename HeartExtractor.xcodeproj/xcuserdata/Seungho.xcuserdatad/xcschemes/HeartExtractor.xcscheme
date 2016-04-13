@@ -12,6 +12,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A9B196E21CB636D50085CFB9"
+               BuildableName = "HeartExtractorTests.xctest"
+               BlueprintName = "HeartExtractorTests"
+               ReferencedContainer = "container:HeartExtractor.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

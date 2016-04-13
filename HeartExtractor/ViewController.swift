@@ -13,6 +13,8 @@ class ViewController: NSViewController {
 	@IBOutlet var textView: NSTextView!
 	@IBOutlet weak var scrollView: NSScrollView!
 	
+	let twitterClient = TwitterClient()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		if TwitterClient.Auth.token == nil {
@@ -21,8 +23,10 @@ class ViewController: NSViewController {
 	}
 	
 	func printLog(string:String) {
-		textView.string? += string + "\n\n"
-		scrollToBottom()
+		dispatch_async(dispatch_get_main_queue(), {
+			self.textView.string? += string + "\n\n"
+			self.scrollToBottom()
+		})
 	}
 	
 	func completeFetch(tweet:TwitterClient.Tweet) {
@@ -52,17 +56,17 @@ class ViewController: NSViewController {
 	
 	@IBAction func likeButton_Click(sender: AnyObject) {
 		printLog("[target: Like]")
-		TwitterClient.downloadFiles(TwitterClient.Target.Favorites, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
+		twitterClient.downloadFiles(TwitterClient.Target.Favorites, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
 	}
 	
 	@IBAction func tweetButton_Click(sender: AnyObject) {
 		printLog("[target: Tweet]")
-		TwitterClient.downloadFiles(TwitterClient.Target.Tweets, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
+		twitterClient.downloadFiles(TwitterClient.Target.Tweets, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
 	}
 	
 	@IBAction func clearSession(sender: AnyObject) {
-		TwitterClient.Auth.clearToken()
-		TwitterClient.Auth.createToken()
+		//TwitterClient.Auth.clearToken()
+		//TwitterClient.Auth.createToken()
 		TwitterClient.DataController.deleteAll()
 	}
 

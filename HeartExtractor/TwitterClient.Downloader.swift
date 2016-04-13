@@ -12,30 +12,33 @@ extension TwitterClient {
 	/**
 	Downloader class for TwitterClient
 	*/
-	class Downloader: NSObject {
+	class Downloader: NSOperation {
+		var url: NSURL?
+		var documentsUrl: NSURL?
+		var destinationUrl: NSURL?
+		var completion: (String, NSError!) -> ()?
 		
-		/**
-		Download file from URL
-		- Parameters:
-			- url: URL to download
-			- completion: Things to do after download complete
-		*/
-		static func downloadFile(url: NSURL, completion:(path:String, error:NSError!) -> Void) {
-			let documentsUrl =  NSFileManager.defaultManager().URLsForDirectory(.DownloadsDirectory, inDomains: .UserDomainMask).first! as NSURL
+		init(url: NSURL, completion:(path:String, error:NSError!) -> Void) {
+			self.url = url
+			documentsUrl =  NSFileManager.defaultManager().URLsForDirectory(.DownloadsDirectory, inDomains: .UserDomainMask).first! as NSURL
 			let urls = url.absoluteString.stringByReplacingOccurrencesOfString(":orig", withString: "", options: NSStringCompareOptions.BackwardsSearch, range: nil)
-			let destinationUrl = documentsUrl.URLByAppendingPathComponent(NSURL(string: urls)!.lastPathComponent!)
-			if NSFileManager().fileExistsAtPath(destinationUrl.path!) {
-				completion(path: destinationUrl.path!, error:nil)
-			} else if let dataFromURL = NSData(contentsOfURL: url){
-				if dataFromURL.writeToURL(destinationUrl, atomically: true) {
-					completion(path: destinationUrl.path!, error:nil)
+			destinationUrl = documentsUrl!.URLByAppendingPathComponent(NSURL(string: urls)!.lastPathComponent!)
+			self.completion = completion
+		}
+		
+		override func main() {
+			if NSFileManager().fileExistsAtPath(destinationUrl!.path!) {
+				completion(destinationUrl!.path!, nil)
+			} else if let dataFromURL = NSData(contentsOfURL: url!){
+				if dataFromURL.writeToURL(destinationUrl!, atomically: true) {
+					completion(destinationUrl!.path!, nil)
 				} else {
 					let error = NSError(domain:"Error saving file", code:1001, userInfo:nil)
-					completion(path: destinationUrl.path!, error:error)
+					completion(destinationUrl!.path!, error)
 				}
 			} else {
 				let error = NSError(domain:"Error downloading file", code:1002, userInfo:nil)
-				completion(path: destinationUrl.path!, error:error)
+				completion(destinationUrl!.path!, error)
 			}
 		}
 	}

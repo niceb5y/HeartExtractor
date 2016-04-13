@@ -14,79 +14,66 @@ extension TwitterClient {
 	Fetch class for TwitterClient
 	*/
 	class Fetch: NSObject {
-		/**
-		Fetch target
-		- parameters:
-			- target: Target to fetch
-			- success: Things to do after fetch
-		*/
-		static func fetch(target:Target, success:((Array<Tweet>) -> Void)) {
-			switch target {
-			case .Tweets:
-				fetch(target, iteration: 15, maxID: nil, success: success)
-				break
-			case .Favorites:
-				fetch(target, iteration: 15, maxID: nil, success: success)
-				break
-			}
-		}
-		
-		/**
-		Fetch target with recursive iterations
-		- parameters:
-			- target: Target to fetch
-			- iteration: Number to iterate
-			- maxID: Maximum ID of tweet
-			- success: Things to do after fetch
-		*/
-		static func fetch(target:Target, iteration:Int, maxID:String?, success:((Array<Tweet>) -> Void)) {
+		static func fetchLimits(completion:(favorites:Int, tweets:Int) -> ()) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
 			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
-			let fetchTweet: ([JSONValue]?) -> () = {
-				guard let statuses = $0 else { return }
-				let list: Array<Tweet> = statuses.map { (twt) in
-					let tweet = Tweet()
-					tweet.id = twt["id_str"].string!
-					tweet.name = twt["user"]["name"].string!
-					tweet.text = twt["text"].string!
-					if twt["extended_entities"]["media"].array != nil {
-						tweet.urls = twt["extended_entities"]["media"].array!.map { (url) in
-							return NSURL(string: url["media_url"].string!)!
-						}
-					} else if twt["entities"]["media"].array != nil {
-						tweet.urls = twt["entities"]["media"].array!.map { (url) in
-							return NSURL(string: url["media_url"].string!)!
-						}
-					} else {
-						tweet.urls = []
-					}
-					return tweet
-				}
-				if iteration > 0 && list.last?.id != maxID {
-					fetch(target, iteration: iteration - 1, maxID: list.last?.id, success: success)
-					success(list)
-				}
-			}
-			let handleError: (NSError) -> () = {
-				let error = $0
-				if error.code == 429 {
-					let alert = NSAlert()
-					alert.messageText = "API limit"
-					alert.informativeText = "try it later."
-					alert.runModal()
-				} else {
-					debugPrint(error)
-				}
-			}
-			switch target {
-			case .Favorites:
-				swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: maxID, success: fetchTweet, failure: handleError)
-				break
-			case .Tweets:
-				swifter.getStatusesHomeTimelineWithCount(200, sinceID: nil, maxID: maxID, trimUser: nil, contributorDetails: nil, includeEntities: nil, success: fetchTweet, failure: handleError)
-				break
-			}
+			swifter.getRateLimitsForResources(["statuses", "favorites"], success: {(resources) in
+				let _favorites = resources!["resources"]!["favorites"]["/favorites/list"]["remaining"].integer!
+				let _tweets = resources!["resources"]!["statuses"]["/statuses/home_timeline"]["remaining"].integer!
+				completion(favorites: _favorites, tweets: _tweets)
+			}, failure: {(error) in
+				debugPrint(error)
+			})
 		}
 		
+		class FetchOperation: NSOperation {
+			var _target: Target
+			var _maxID: String?
+			var _completion: (Array<Tweet>) -> ()
+			
+			init(target: Target, maxID:String?, completion:(Array<Tweet>) -> ()) {
+				_target = target
+				_maxID = maxID
+				_completion = completion
+			}
+			
+			override func main() {
+				let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
+				swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
+				let fetchTweet: ([JSONValue]?) -> () = {
+					guard let statuses = $0 else { return }
+					let list: Array<Tweet> = statuses.map { (twt) in
+						let tweet = Tweet()
+						tweet.id = twt["id_str"].string!
+						tweet.name = twt["user"]["name"].string!
+						tweet.text = twt["text"].string!
+						if twt["extended_entities"]["media"].array != nil {
+							tweet.urls = twt["extended_entities"]["media"].array!.map { (url) in
+								return NSURL(string: url["media_url"].string!)!
+							}
+						} else if twt["entities"]["media"].array != nil {
+							tweet.urls = twt["entities"]["media"].array!.map { (url) in
+								return NSURL(string: url["media_url"].string!)!
+							}
+						} else {
+							tweet.urls = []
+						}
+						return tweet
+					}
+					self._completion(list)
+				}
+				let handleError: (NSError) -> () = {
+					debugPrint($0)
+				}
+				switch _target {
+				case .Favorites:
+					swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: _maxID, success: fetchTweet, failure: handleError)
+					break
+				case .Tweets:
+					swifter.getStatusesHomeTimelineWithCount(200, sinceID: nil, maxID: _maxID, trimUser: nil, contributorDetails: nil, includeEntities: nil, success: fetchTweet, failure: handleError)
+					break
+				}
+			}
+		}
 	}
 }
