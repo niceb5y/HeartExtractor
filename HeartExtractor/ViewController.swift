@@ -56,12 +56,18 @@ class ViewController: NSViewController {
 	
 	@IBAction func likeButton_Click(sender: AnyObject) {
 		printLog("[target: Like]")
-		twitterClient.downloadFiles(TwitterClient.Target.Favorites, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
+		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+		dispatch_async(queue) { 
+			self.twitterClient.downloadFiles(TwitterClient.Target.Favorites, completeFetch: self.completeFetch, completeDownload: self.completeDownload, skipDownload: self.skipDownload)
+		}
 	}
 	
 	@IBAction func tweetButton_Click(sender: AnyObject) {
 		printLog("[target: Tweet]")
-		twitterClient.downloadFiles(TwitterClient.Target.Tweets, completeFetch: completeFetch, completeDownload: completeDownload, skipDownload: skipDownload)
+		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+		dispatch_async(queue) {
+			self.twitterClient.downloadFiles(TwitterClient.Target.Tweets, completeFetch: self.completeFetch, completeDownload: self.completeDownload, skipDownload: self.skipDownload)
+		}
 	}
 	
 	@IBAction func clearSession(sender: AnyObject) {

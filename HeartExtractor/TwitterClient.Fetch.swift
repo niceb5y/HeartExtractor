@@ -60,7 +60,10 @@ extension TwitterClient {
 						}
 						return tweet
 					}
-					self._completion(list)
+					let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+					dispatch_async(queue, { 
+						self._completion(list)
+					})
 				}
 				let handleError: (NSError) -> () = {
 					debugPrint($0)
