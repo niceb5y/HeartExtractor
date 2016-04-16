@@ -23,7 +23,6 @@
 		A9CB24901CB95EC10032B709 /* TwitterClient.Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB248F1CB95EC10032B709 /* TwitterClient.Auth.swift */; };
 		A9CB24921CB95F4C0032B709 /* TwitterClient.Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */; };
 		A9CB24941CB95FB20032B709 /* TwitterClient.Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */; };
-		A9CB24961CB9604F0032B709 /* TwitterClient.Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24951CB9604F0032B709 /* TwitterClient.Tweet.swift */; };
 		A9CB24981CB9608B0032B709 /* TwitterClient.Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		A9CB248F1CB95EC10032B709 /* TwitterClient.Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Auth.swift; sourceTree = "<group>"; };
 		A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Encryption.swift; sourceTree = "<group>"; };
 		A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Downloader.swift; sourceTree = "<group>"; };
-		A9CB24951CB9604F0032B709 /* TwitterClient.Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Tweet.swift; sourceTree = "<group>"; };
 		A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Fetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +155,6 @@
 				A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */,
 				A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */,
 				A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */,
-				A9CB24951CB9604F0032B709 /* TwitterClient.Tweet.swift */,
 			);
 			name = TwitterClient;
 			sourceTree = "<group>";
@@ -280,7 +277,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9CB24961CB9604F0032B709 /* TwitterClient.Tweet.swift in Sources */,
 				A9B196D51CB636D40085CFB9 /* ViewController.swift in Sources */,
 				A9CB24941CB95FB20032B709 /* TwitterClient.Downloader.swift in Sources */,
 				A906E6F91CBA500F00B03D6A /* TwitterClient.DataController.swift in Sources */,

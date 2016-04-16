@@ -26,56 +26,46 @@ extension TwitterClient {
 			})
 		}
 		
-		class FetchOperation: NSOperation {
-			var _target: Target
-			var _maxID: String?
-			var _completion: (Array<Tweet>) -> ()
-			
-			init(target: Target, maxID:String?, completion:(Array<Tweet>) -> ()) {
-				_target = target
-				_maxID = maxID
-				_completion = completion
-			}
-			
-			override func main() {
-				let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
-				swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
-				let fetchTweet: ([JSONValue]?) -> () = {
-					guard let statuses = $0 else { return }
-					let list: Array<Tweet> = statuses.map { (twt) in
-						let tweet = Tweet()
-						tweet.id = twt["id_str"].string!
-						tweet.name = twt["user"]["name"].string!
-						tweet.text = twt["text"].string!
-						if twt["extended_entities"]["media"].array != nil {
-							tweet.urls = twt["extended_entities"]["media"].array!.map { (url) in
-								return NSURL(string: url["media_url"].string!)!
-							}
-						} else if twt["entities"]["media"].array != nil {
-							tweet.urls = twt["entities"]["media"].array!.map { (url) in
-								return NSURL(string: url["media_url"].string!)!
-							}
-						} else {
-							tweet.urls = []
+		static func fetch(target: Target, maxID: String?, completion:(Array<NSURL>, String) -> ()) {
+			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
+			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
+			var urls: Array<NSURL> = []
+			let fetchTweet: ([JSONValue]?) -> () = {
+				guard let tweets = $0 else { return }
+				for tweet in tweets {
+					let extended_media = tweet["extended_entities"]["media"].array
+					let media = tweet["entities"]["media"].array
+					if extended_media != nil {
+						for url in extended_media! {
+							urls.append(NSURL(string: url["media_url"].string!)!)
 						}
-						return tweet
+					} else if media != nil {
+						for url in media! {
+							urls.append(NSURL(string: url["media_url"].string!)!)
+						}
+					}
+				}
+				if tweets.count > 0 {
+					let _maxID = tweets.last!["id_str"].string!
+					if maxID == _maxID {
+						return
 					}
 					let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-					dispatch_async(queue, { 
-						self._completion(list)
+					dispatch_async(queue, {
+						completion(urls, _maxID)
 					})
 				}
-				let handleError: (NSError) -> () = {
-					debugPrint($0)
-				}
-				switch _target {
-				case .Favorites:
-					swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: _maxID, success: fetchTweet, failure: handleError)
-					break
-				case .Tweets:
-					swifter.getStatusesHomeTimelineWithCount(200, sinceID: nil, maxID: _maxID, trimUser: nil, contributorDetails: nil, includeEntities: nil, success: fetchTweet, failure: handleError)
-					break
-				}
+			}
+			let handleError: (NSError) -> () = {
+				debugPrint($0)
+			}
+			switch target {
+			case .Favorites:
+				swifter.getFavoritesListWithCount(200, sinceID: nil, maxID: maxID, success: fetchTweet, failure: handleError)
+				break
+			case .Tweets:
+				swifter.getStatusesHomeTimelineWithCount(200, sinceID: nil, maxID: maxID, trimUser: nil, contributorDetails: nil, includeEntities: nil, success: fetchTweet, failure: handleError)
+				break
 			}
 		}
 	}

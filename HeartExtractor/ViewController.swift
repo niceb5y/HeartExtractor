@@ -22,51 +22,17 @@ class ViewController: NSViewController {
 		}
 	}
 	
-	func printLog(string:String) {
-		dispatch_async(dispatch_get_main_queue(), {
-			self.textView.string? += string + "\n\n"
-			self.scrollToBottom()
-		})
-	}
-	
-	func completeFetch(tweet:TwitterClient.Tweet) {
-		printLog(tweet.name + "\n" + tweet.text)
-	}
-	
-	func completeDownload(string:String) {
-		printLog("[File downloaded: \(string)]")
-	}
-	
-	func skipDownload(string:String) {
-		printLog("[File skipped: \(string)]")
-	}
-	
-	func scrollToBottom() {
-		let newScrollOrigin:NSPoint?
-		guard let view = scrollView.documentView else {
-			return
-		}
-		if view.flipped! {
-			newScrollOrigin = NSMakePoint(0.0, NSMaxY(view.frame))
-		} else {
-			newScrollOrigin = NSMakePoint(0.0, 0.0)
-		}
-		view.scrollPoint(newScrollOrigin!)
-	}
-	
 	@IBAction func likeButton_Click(sender: AnyObject) {
-		printLog("[target: Like]")
 		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-		dispatch_async(queue) { 
-			self.twitterClient.downloadFiles(TwitterClient.Target.Favorites, completeFetch: self.completeFetch, completeDownload: self.completeDownload, skipDownload: self.skipDownload)
+		dispatch_async(queue) {
+			self.twitterClient.downloadFiles(TwitterClient.Target.Favorites, completion: nil)
 		}
 	}
 	
 	@IBAction func tweetButton_Click(sender: AnyObject) {
-		printLog("[target: Tweet]")
 		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 		dispatch_async(queue) {
-			self.twitterClient.downloadFiles(TwitterClient.Target.Tweets, completeFetch: self.completeFetch, completeDownload: self.completeDownload, skipDownload: self.skipDownload)
+			self.twitterClient.downloadFiles(TwitterClient.Target.Tweets, completion: nil)
 		}
 	}
 	
