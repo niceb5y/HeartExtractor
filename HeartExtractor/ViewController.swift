@@ -37,8 +37,8 @@ class ViewController: NSViewController {
 	}
 	
 	@IBAction func clearSession(sender: AnyObject) {
-		//TwitterClient.Auth.clearToken()
-		//TwitterClient.Auth.createToken()
+		TwitterClient.Auth.clearToken()
+		TwitterClient.Auth.createToken()
 		TwitterClient.DataController.deleteAll()
 	}
 
