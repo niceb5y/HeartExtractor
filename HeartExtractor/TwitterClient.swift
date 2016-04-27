@@ -35,6 +35,12 @@ class TwitterClient: NSObject {
 		}
 	}
 	
+	/**
+	Download images from Twitter
+	- parameters:
+		- target: Target to fetch
+		- completion: Block to excute when download completed
+	*/
 	func downloadFiles(target: Target, completion:(() -> ())? = nil) {
 		var _maxID:String?
 		fetchCompleted = false

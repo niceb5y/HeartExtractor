@@ -14,6 +14,11 @@ extension TwitterClient {
 	Fetch class for TwitterClient
 	*/
 	class Fetch: NSObject {
+		/**
+		Fetch API limit rates
+		- parameters:
+			- completion: Block to excute with limit rates
+		*/
 		static func fetchLimits(completion:(favorites:Int, tweets:Int) -> ()) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
 			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
@@ -26,6 +31,13 @@ extension TwitterClient {
 			})
 		}
 		
+		/**
+		Fetch API limit rates
+		- parameters:
+			- target: Target to fetch
+			- maxID: maxID of tweet
+			- completion: Block to excute with URL array and maxID
+		*/
 		static func fetch(target: Target, maxID: String?, completion:(urls: Array<NSURL>, maxID: String, isFinalFetch: Bool) -> ()) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
 			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
