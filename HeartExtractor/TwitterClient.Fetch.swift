@@ -26,7 +26,7 @@ extension TwitterClient {
 			})
 		}
 		
-		static func fetch(target: Target, maxID: String?, completion:(Array<NSURL>, String) -> ()) {
+		static func fetch(target: Target, maxID: String?, completion:(urls: Array<NSURL>, maxID: String, isFinalFetch: Bool) -> ()) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)
 			swifter.client.credential = SwifterCredential(accessToken: Auth.token!)
 			var urls: Array<NSURL> = []
@@ -48,11 +48,12 @@ extension TwitterClient {
 				if tweets.count > 0 {
 					let _maxID = tweets.last!["id_str"].string!
 					if maxID == _maxID {
+						completion(urls: [], maxID: _maxID, isFinalFetch: true)
 						return
 					}
 					let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 					dispatch_async(queue, {
-						completion(urls, _maxID)
+						completion(urls: urls, maxID: _maxID, isFinalFetch: false)
 					})
 				}
 			}

@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJf-V7-o1I">
-                                <rect key="frame" x="177" y="39.5" width="126" height="21"/>
+                                <rect key="frame" x="177" y="39" width="126" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NgW-Q4-jD9">
                                         <rect key="frame" x="-6" y="-7" width="65" height="32"/>
@@ -110,12 +110,20 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-kC-P9y">
+                                <rect key="frame" x="311" y="42" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="KWG-kC-P9y" firstAttribute="leading" secondItem="bJf-V7-o1I" secondAttribute="trailing" constant="8" id="3Up-DO-ioD"/>
+                            <constraint firstItem="KWG-kC-P9y" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="42" id="8sC-pa-gPw"/>
                             <constraint firstItem="bJf-V7-o1I" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="E5h-By-fTh"/>
                             <constraint firstItem="bJf-V7-o1I" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="aR1-lG-ANW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicator" destination="KWG-kC-P9y" id="Mlx-EP-7pZ"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

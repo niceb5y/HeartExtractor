@@ -16,9 +16,9 @@ extension TwitterClient {
 		var url: NSURL?
 		var documentsUrl: NSURL?
 		var destinationUrl: NSURL?
-		var completion: (String, NSError!) -> ()?
+		var completion: (String) -> ()
 		
-		init(url: NSURL, completion:(path:String, error:NSError!) -> Void) {
+		init(url: NSURL, completion:(path:String) -> Void) {
 			self.url = url
 			documentsUrl =  NSFileManager.defaultManager().URLsForDirectory(.DownloadsDirectory, inDomains: .UserDomainMask).first! as NSURL
 			let urls = url.absoluteString.stringByReplacingOccurrencesOfString(":orig", withString: "", options: NSStringCompareOptions.BackwardsSearch, range: nil)
@@ -28,17 +28,15 @@ extension TwitterClient {
 		
 		override func main() {
 			if NSFileManager().fileExistsAtPath(destinationUrl!.path!) {
-				completion(destinationUrl!.path!, nil)
-			} else if let dataFromURL = NSData(contentsOfURL: url!){
+				debugPrint("File already exists.")
+			} else if let dataFromURL = NSData(contentsOfURL: url!) {
 				if dataFromURL.writeToURL(destinationUrl!, atomically: true) {
-					completion(destinationUrl!.path!, nil)
+					completion(destinationUrl!.path!)
 				} else {
-					let error = NSError(domain:"Error saving file", code:1001, userInfo:nil)
-					completion(destinationUrl!.path!, error)
+					debugPrint("Error saving file.")
 				}
 			} else {
-				let error = NSError(domain:"Error downloading file", code:1002, userInfo:nil)
-				completion(destinationUrl!.path!, error)
+				debugPrint("Error downloading file.")
 			}
 		}
 	}

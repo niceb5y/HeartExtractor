@@ -37,16 +37,15 @@ extension TwitterClient {
 		*/
 		static func createToken() {
 			let swifter = Swifter(consumerKey: TwitterClient.CONSUMER_KEY, consumerSecret: TwitterClient.CONSUMER_SECRET)
-			swifter.authorizeWithCallbackURL(NSURL(string: "hext://success")!,success: { (accessToken, response) in
+			swifter.authorizeWithCallbackURL(NSURL(string: "hext://success")!,
+				success: { (accessToken, response) in
 					let defaults = NSUserDefaults.standardUserDefaults()
 					let key = Encryption.encryptAES256((accessToken?.key)!)
 					let secret = Encryption.encryptAES256((accessToken?.secret)!)
 					defaults.setObject(key, forKey: "twtKey")
 					defaults.setObject(secret, forKey: "twtSecret")
 					defaults.synchronize()
-				}, failure: { (error) in
-					debugPrint(error)
-			})
+				}, failure: { (error) in debugPrint(error) })
 		}
 		
 		/**

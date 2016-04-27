@@ -17,6 +17,7 @@ class TwitterClient: NSObject {
 	
 	let operationQueue = NSOperationQueue()
 	var limitsLeft:[Int] = [15, 15]
+	var fetchCompleted = false
 	
 	/**
 	TwitterClient Target
@@ -34,25 +35,38 @@ class TwitterClient: NSObject {
 		}
 	}
 	
-	func downloadFiles(target: Target, completion:(() -> ())?) {
+	func downloadFiles(target: Target, completion:(() -> ())? = nil) {
 		var _maxID:String?
-		func download(urls:Array<NSURL>, maxID:String) {
+		fetchCompleted = false
+		func download(urls:Array<NSURL>, maxID:String, isFinalFetch:Bool) {
+			if isFinalFetch {
+				fetchCompleted = true
+			}
 			for url in urls {
 				let urls = url.absoluteString
 				if urls.hasPrefix("http://pbs.twimg.com/") {
 					let newURL = NSURL(string: urls + ":orig")
 					if !DataController.contains(newURL!) {
-						self.operationQueue.addOperation(TwitterClient.Downloader(url: newURL!, completion: { (path, error) in
-							
+						self.operationQueue.addOperation(TwitterClient.Downloader(url: newURL!, completion: { (path) in
+							if self.operationQueue.operationCount <= 1 && self.fetchCompleted {
+								if completion != nil {
+									completion!()
+								}
+							}
 						}))
 						DataController.insert(newURL!)
 					}
 				}
 			}
 			_maxID = maxID
-			if limitsLeft[target.rawValue] > 0 {
+			if limitsLeft[target.rawValue] > 0 && !isFinalFetch {
 				limitsLeft[target.rawValue] -= 1
 				TwitterClient.Fetch.fetch(target, maxID: _maxID, completion: download)
+			} else {
+				fetchCompleted = true
+				if operationQueue.operationCount <= 1 {
+					completion!()
+				}
 			}
 			
 		}
@@ -64,6 +78,7 @@ class TwitterClient: NSObject {
 			alert.informativeText = "API Limit"
 			alert.messageText = "Try it later"
 			alert.runModal()
+			completion!()
 		}
 	}
 }

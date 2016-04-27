@@ -12,6 +12,7 @@ import SwifterMac
 class ViewController: NSViewController {
 	@IBOutlet var textView: NSTextView!
 	@IBOutlet weak var scrollView: NSScrollView!
+	@IBOutlet weak var indicator: NSProgressIndicator!
 	
 	let twitterClient = TwitterClient()
 	
@@ -22,17 +23,23 @@ class ViewController: NSViewController {
 		}
 	}
 	
+	func completion() {
+		indicator.stopAnimation(self)
+	}
+	
 	@IBAction func likeButton_Click(sender: AnyObject) {
+		indicator.startAnimation(self)
 		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 		dispatch_async(queue) {
-			self.twitterClient.downloadFiles(TwitterClient.Target.Favorites, completion: nil)
+			self.twitterClient.downloadFiles(TwitterClient.Target.Favorites, completion: self.completion)
 		}
 	}
 	
 	@IBAction func tweetButton_Click(sender: AnyObject) {
+		indicator.startAnimation(self)
 		let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 		dispatch_async(queue) {
-			self.twitterClient.downloadFiles(TwitterClient.Target.Tweets, completion: nil)
+			self.twitterClient.downloadFiles(TwitterClient.Target.Tweets, completion: self.completion)
 		}
 	}
 	
