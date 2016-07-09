@@ -32,11 +32,11 @@ extension TwitterClient {
 		}
 		
 		/**
-		Fetch API limit rates
+		Fetch image URLs
 		- parameters:
 			- target: Target to fetch
 			- maxID: maxID of tweet
-			- completion: Block to excute with URL array and maxID
+			- completion: Block to excute with URL array, maxID, and if it is final fetch
 		*/
 		static func fetch(target: Target, maxID: String?, completion:(urls: Array<NSURL>, maxID: String, isFinalFetch: Bool) -> ()) {
 			let swifter = Swifter(consumerKey: CONSUMER_KEY, consumerSecret: CONSUMER_SECRET)

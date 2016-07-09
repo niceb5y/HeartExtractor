@@ -25,6 +25,11 @@ class ViewController: NSViewController {
 	
 	func completion() {
 		indicator.stopAnimation(self)
+		let notification = NSUserNotification()
+		notification.title = "HeartExtractor"
+		notification.informativeText = "Task Complete."
+		notification.soundName = NSUserNotificationDefaultSoundName
+		NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
 	}
 	
 	@IBAction func likeButton_Click(sender: AnyObject) {

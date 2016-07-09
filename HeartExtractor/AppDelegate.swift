@@ -10,7 +10,7 @@ import Cocoa
 import SwifterMac
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
 
 	func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
 		return true
@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			andEventID: AEEventID(kAEGetURL))
 		LSSetDefaultHandlerForURLScheme("hext",
 			NSBundle.mainBundle().bundleIdentifier! as NSString as CFString)
+		NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
 	}
 
 	func handleEvent(event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {
@@ -174,6 +175,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	    // If we got here, it is time to quit.
 	    return .TerminateNow
 	}
-
+	
+	func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
+		return true
+	}
 }
 
