@@ -1,0 +1,11 @@
+/* 
+  File.strings
+  HeartExtractor
+
+  Created by 김승호 on 2016. 8. 17..
+  Copyright © 2016년 Seungho Kim. All rights reserved.
+*/
+
+"OK" = "OK";
+"Quit" = "Quit";
+"TaskComplete" = "Task Complete";

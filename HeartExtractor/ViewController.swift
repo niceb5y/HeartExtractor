@@ -25,11 +25,18 @@ class ViewController: NSViewController {
 	
 	func completion() {
 		indicator.stopAnimation(self)
-		let notification = NSUserNotification()
-		notification.title = "HeartExtractor"
-		notification.informativeText = "Task Complete."
-		notification.soundName = NSUserNotificationDefaultSoundName
-		NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+		let alert = NSAlert()
+		alert.addButtonWithTitle(NSLocalizedString("OK", comment: "OK"))
+		alert.addButtonWithTitle(NSLocalizedString("Quit", comment: "Quit"))
+		alert.messageText = "Heart Extractor"
+		alert.informativeText = NSLocalizedString("TaskComplete", comment: "TaskComplete")
+		alert.alertStyle = NSAlertStyle.InformationalAlertStyle
+		alert.beginSheetModalForWindow(NSApp.mainWindow!) { (response) in
+			if response == NSAlertSecondButtonReturn {
+				NSApp.mainWindow?.close()
+				
+			}
+		}
 	}
 	
 	@IBAction func likeButton_Click(sender: AnyObject) {
