@@ -75,6 +75,7 @@
 		A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Encryption.swift; sourceTree = "<group>"; };
 		A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Downloader.swift; sourceTree = "<group>"; };
 		A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Fetch.swift; sourceTree = "<group>"; };
+		A9F807F21D640A790014C72E /* HeartExtractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HeartExtractor.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +127,7 @@
 		A9B196D11CB636D40085CFB9 /* HeartExtractor */ = {
 			isa = PBXGroup;
 			children = (
+				A9F807F21D640A790014C72E /* HeartExtractor.entitlements */,
 				A9B196D21CB636D40085CFB9 /* AppDelegate.swift */,
 				A9B196D41CB636D40085CFB9 /* ViewController.swift */,
 				A9200C981CBA3EA700CBF725 /* DataEntity */,
@@ -215,6 +217,11 @@
 				TargetAttributes = {
 					A9B196CE1CB636D40085CFB9 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					A9B196E21CB636D50085CFB9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -422,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeartExtractor/HeartExtractor.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeartExtractor/HeartExtractor.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
