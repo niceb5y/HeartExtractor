@@ -108,11 +108,9 @@
 		A9B196C61CB636D40085CFB9 = {
 			isa = PBXGroup;
 			children = (
-				A9C895801D65C08300080E26 /* CryptoSwift.framework */,
-				A9C895811D65C08300080E26 /* PromiseKit.framework */,
-				A9C895821D65C08300080E26 /* SwifterMac.framework */,
 				A9B196D11CB636D40085CFB9 /* HeartExtractor */,
 				A9B196E61CB636D50085CFB9 /* HeartExtractorTests */,
+				A9C895881D65C26F00080E26 /* Frameworks */,
 				A9B196D01CB636D40085CFB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,6 +161,16 @@
 				A9CB24971CB9608B0032B709 /* TwitterClient.Fetch.swift */,
 			);
 			name = TwitterClient;
+			sourceTree = "<group>";
+		};
+		A9C895881D65C26F00080E26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C895801D65C08300080E26 /* CryptoSwift.framework */,
+				A9C895811D65C08300080E26 /* PromiseKit.framework */,
+				A9C895821D65C08300080E26 /* SwifterMac.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
