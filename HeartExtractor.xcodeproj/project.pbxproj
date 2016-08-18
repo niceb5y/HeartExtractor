@@ -10,10 +10,6 @@
 		A906E6F91CBA500F00B03D6A /* TwitterClient.DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A906E6F81CBA500F00B03D6A /* TwitterClient.DataController.swift */; };
 		A92654FA1D639CE9000F6600 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A92654FC1D639CE9000F6600 /* Localizable.strings */; };
 		A94721F41CBA5C2E00B73CF0 /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94721F21CBA5C2E00B73CF0 /* HistoryEntity.swift */; };
-		A96D5FA11CB6AE8D00AA8AD5 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */; };
-		A96D5FA21CB6AE8D00AA8AD5 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A96D5FA81CB78E7100AA8AD5 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */; };
-		A96D5FA91CB78E7100AA8AD5 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A96D5FAB1CB78FAF00AA8AD5 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D5FAA1CB78FAF00AA8AD5 /* TwitterClient.swift */; };
 		A9B196D31CB636D40085CFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D21CB636D40085CFB9 /* AppDelegate.swift */; };
 		A9B196D51CB636D40085CFB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196D41CB636D40085CFB9 /* ViewController.swift */; };
@@ -21,6 +17,9 @@
 		A9B196DA1CB636D50085CFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B196D91CB636D50085CFB9 /* Assets.xcassets */; };
 		A9B196DD1CB636D50085CFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B196DB1CB636D50085CFB9 /* Main.storyboard */; };
 		A9B196E81CB636D50085CFB9 /* HeartExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */; };
+		A9C895831D65C08300080E26 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895801D65C08300080E26 /* CryptoSwift.framework */; };
+		A9C895841D65C08300080E26 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895811D65C08300080E26 /* PromiseKit.framework */; };
+		A9C895851D65C08300080E26 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895821D65C08300080E26 /* SwifterMac.framework */; };
 		A9CB24901CB95EC10032B709 /* TwitterClient.Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB248F1CB95EC10032B709 /* TwitterClient.Auth.swift */; };
 		A9CB24921CB95F4C0032B709 /* TwitterClient.Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */; };
 		A9CB24941CB95FB20032B709 /* TwitterClient.Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB24931CB95FB20032B709 /* TwitterClient.Downloader.swift */; };
@@ -44,8 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A96D5FA21CB6AE8D00AA8AD5 /* SwifterMac.framework in Embed Frameworks */,
-				A96D5FA91CB78E7100AA8AD5 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,8 +54,6 @@
 		A92654FB1D639CE9000F6600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A92654FD1D639CEC000F6600 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A94721F21CBA5C2E00B73CF0 /* HistoryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryEntity.swift; sourceTree = "<group>"; };
-		A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwifterMac.framework; sourceTree = "<group>"; };
-		A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		A96D5FAA1CB78FAF00AA8AD5 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		A9B196CF1CB636D40085CFB9 /* HeartExtractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartExtractor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B196D21CB636D40085CFB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +65,9 @@
 		A9B196E31CB636D50085CFB9 /* HeartExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartExtractorTests.swift; sourceTree = "<group>"; };
 		A9B196E91CB636D50085CFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C895801D65C08300080E26 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
+		A9C895811D65C08300080E26 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
+		A9C895821D65C08300080E26 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		A9CAB65E1CBA84DC0091CDE5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		A9CB248F1CB95EC10032B709 /* TwitterClient.Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Auth.swift; sourceTree = "<group>"; };
 		A9CB24911CB95F4C0032B709 /* TwitterClient.Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.Encryption.swift; sourceTree = "<group>"; };
@@ -83,8 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A96D5FA11CB6AE8D00AA8AD5 /* SwifterMac.framework in Frameworks */,
-				A96D5FA81CB78E7100AA8AD5 /* CryptoSwift.framework in Frameworks */,
+				A9C895831D65C08300080E26 /* CryptoSwift.framework in Frameworks */,
+				A9C895841D65C08300080E26 /* PromiseKit.framework in Frameworks */,
+				A9C895851D65C08300080E26 /* SwifterMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +108,9 @@
 		A9B196C61CB636D40085CFB9 = {
 			isa = PBXGroup;
 			children = (
+				A9C895801D65C08300080E26 /* CryptoSwift.framework */,
+				A9C895811D65C08300080E26 /* PromiseKit.framework */,
+				A9C895821D65C08300080E26 /* SwifterMac.framework */,
 				A9B196D11CB636D40085CFB9 /* HeartExtractor */,
 				A9B196E61CB636D50085CFB9 /* HeartExtractorTests */,
 				A9B196D01CB636D40085CFB9 /* Products */,
@@ -136,8 +138,6 @@
 				A9B196DB1CB636D50085CFB9 /* Main.storyboard */,
 				A9B196DE1CB636D50085CFB9 /* Info.plist */,
 				A9B196D61CB636D40085CFB9 /* HeartExtractor.xcdatamodeld */,
-				A96D5FA71CB78E7100AA8AD5 /* CryptoSwift.framework */,
-				A96D5F9F1CB6AE7A00AA8AD5 /* SwifterMac.framework */,
 				A92654FC1D639CE9000F6600 /* Localizable.strings */,
 			);
 			path = HeartExtractor;
@@ -177,6 +177,7 @@
 				A9B196CC1CB636D40085CFB9 /* Frameworks */,
 				A9B196CD1CB636D40085CFB9 /* Resources */,
 				A96D5FA31CB6AE8D00AA8AD5 /* Embed Frameworks */,
+				A9C895871D65C13600080E26 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -270,6 +271,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A9C895871D65C13600080E26 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SwifterMac.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		A9CAB65F1CBA87EB0091CDE5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -435,6 +452,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/HeartExtractor",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = HeartExtractor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -453,6 +471,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/HeartExtractor",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = HeartExtractor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
