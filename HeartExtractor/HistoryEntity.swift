@@ -12,7 +12,7 @@ import CoreData
 
 class HistoryEntity: NSManagedObject {
 
-	@NSManaged var when: NSDate?
+	@NSManaged var when: Date?
 	@NSManaged var address: String?
 
 }

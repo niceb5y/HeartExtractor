@@ -1,3 +1,4 @@
-github "krzyzanowskim/CryptoSwift" "0.5.2"
-github "mxcl/PromiseKit" "3.5.0"
-github "mattdonnelly/Swifter" "1.7"
+github "lorentey/BigInt" "75c2389ce3ae3849467ba60e3d146d06d5b42efa"
+github "krzyzanowskim/CryptoSwift" "6087408fb521bec598b2871544a8b8b2801b9a81"
+github "mxcl/PromiseKit" "afc2cf3de4653e79d38f559a648a46a6a68f7a39"
+github "mattdonnelly/Swifter" "b038e2039ab821425bfb683b88e267c74100c356"
