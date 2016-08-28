@@ -1,4 +1,3 @@
 github "mattdonnelly/Swifter" "swift-3"
 github "krzyzanowskim/CryptoSwift" "swift3"
 github "mxcl/PromiseKit" "swift-3.0"
-github "lorentey/BigInt" "swift3"

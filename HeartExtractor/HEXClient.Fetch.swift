@@ -31,7 +31,6 @@ extension HEXClient{
 
 		static func fetchURL(target: Target, token: Auth.Token, limits:Limit, maxID: String?) -> Promise<[URL]> {
 			func fetch(target: Target, swifter: Swifter, limits: Int, maxID: String?, completion:(([URL]) -> ()), reject:((Error) -> ())) {
-				debugPrint(limits)
 				func decreaseStringNumberBy1(number:String?) -> String? {
 					guard let number = number else {
 						return nil

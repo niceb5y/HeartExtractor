@@ -19,39 +19,25 @@ extension HEXClient {
 		static var token: Token? {
 			get {
 				let defaults = UserDefaults.standard
-				guard let EncryptedKey = defaults.string(forKey: "twtKey"),
-					let EncryptedSecret = defaults.string(forKey: "twtSecret") else {
+				guard let encryptedKey = defaults.data(forKey: "hextKey"),
+					let encryptedSecret = defaults.data(forKey: "hextSecret") else {
 						return nil
 				}
-				guard let key = Encryption.decryptAES256(string: EncryptedKey),
-					let secret = Encryption.decryptAES256(string: EncryptedSecret) else {
-						return nil
-				}
+				let key = Encryption.decryptAES256(encrypted: encryptedKey)
+				let secret = Encryption.decryptAES256(encrypted: encryptedSecret)
 				return (key: key, secret: secret)
 			}
-			set(token) {
+			set(aToken) {
 				let defaults = UserDefaults.standard
-				let key = Encryption.encryptAES256(string: token!.key)
-				let secret = Encryption.encryptAES256(string: token!.secret)
-				defaults.set(key, forKey: "twtKey")
-				defaults.set(secret, forKey: "twtSecret")
+				guard let key = aToken?.key,
+					let secret = aToken?.secret else {
+						return
+				}
+				let encryptedKey = Encryption.encryptAES256(plain: key)
+				let encryptedSecret = Encryption.encryptAES256(plain: secret)
+				defaults.set(encryptedKey, forKey: "hextKey")
+				defaults.set(encryptedSecret, forKey: "hextSecret")
 				defaults.synchronize()
-			}
-		}
-
-		
-		static var tokenX: Credential.OAuthAccessToken? {
-			get {
-				let defaults = UserDefaults.standard
-				guard let EncryptedKey = defaults.string(forKey: "twtKey"),
-					let EncryptedSecret = defaults.string(forKey: "twtSecret") else {
-						return nil
-				}
-				guard let key = Encryption.decryptAES256(string: EncryptedKey),
-					let secret = Encryption.decryptAES256(string: EncryptedSecret) else {
-						return nil
-				}
-				return Credential.OAuthAccessToken(key: key, secret: secret)
 			}
 		}
 		
@@ -64,10 +50,8 @@ extension HEXClient {
 					swifter.authorize(
 						with: URL(string: "hext://success")!,
 						success: { (accessToken, response) in
-							fullfill((
-								key: Encryption.encryptAES256(string: (accessToken?.key)!)!,
-								secret: Encryption.encryptAES256(string: (accessToken?.secret)!)!
-							))
+							token = (key: (accessToken?.key)!, secret: (accessToken?.secret)!)
+							fullfill(token!)
 						}, failure: { (error) in
 							reject(error)
 						}
@@ -78,8 +62,8 @@ extension HEXClient {
 		
 		static func clearToken() {
 			let defaults = UserDefaults.standard
-			defaults.removeObject(forKey: "twtKey")
-			defaults.removeObject(forKey: "twtSecret")
+			defaults.removeObject(forKey: "hextKey")
+			defaults.removeObject(forKey: "hextSecret")
 			defaults.synchronize()
 		}
 	}

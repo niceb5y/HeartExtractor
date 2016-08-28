@@ -10,7 +10,7 @@ import Cocoa
 import SwifterMac
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 		return true
@@ -18,15 +18,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
-		NSAppleEventManager.shared().setEventHandler(self,
-			andSelector: #selector(handleEvent(_:withReplyEvent:)),
-			forEventClass: AEEventClass(kInternetEventClass),
-			andEventID: AEEventID(kAEGetURL))
-		LSSetDefaultHandlerForURLScheme("hext" as CFString,
-			Bundle.main.bundleIdentifier! as NSString as CFString)
-		NSUserNotificationCenter.default.delegate = self
+		NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleEvent(_:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+		LSSetDefaultHandlerForURLScheme("hext" as CFString, Bundle.main.bundleIdentifier! as NSString as CFString)
 	}
-
+	
 	func handleEvent(_ event: NSAppleEventDescriptor!, withReplyEvent: NSAppleEventDescriptor!) {
 		Swifter.handleOpenURL(URL(string: event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))!.stringValue!)!)
 	}
@@ -34,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
-
+	
 	// MARK: - Core Data stack
 	
 	lazy var applicationDocumentsDirectory: Foundation.URL = {
