@@ -30,7 +30,7 @@ extension HEXClient{
 		}
 
 		static func fetchURL(target: Target, token: Auth.Token, limits:Limit, maxID: String?) -> Promise<[URL]> {
-			func fetch(target: Target, swifter: Swifter, limits: Int, maxID: String?, completion:(([URL]) -> ()), reject:((Error) -> ())) {
+			func fetch(target: Target, swifter: Swifter, limits: Int, maxID: String?, completion: @escaping (([URL]) -> ()), reject:@escaping ((Error) -> ())) {
 				func decreaseStringNumberBy1(number:String?) -> String? {
 					guard let number = number else {
 						return nil
@@ -61,14 +61,32 @@ extension HEXClient{
 						let maxID = tweets.last!["id_str"].string
 						for tweet in tweets {
 							let extended_media = tweet["extended_entities"]["media"].array
-							let media = tweet["entities"]["media"].array
+							let normal_media = tweet["entities"]["media"].array
 							if extended_media != nil {
-								for url in extended_media! {
-									fetchedURLs.append(URL(string: url["media_url"].string!)!)
+								for media in extended_media! {
+                                    let type = media["type"].string!
+                                    if (type == "photo") {
+                                        fetchedURLs.append(URL(string: media["media_url"].string!)!)
+                                    } else if (type == "animated_gif") {
+                                        fetchedURLs.append(URL(string: media["video_info"]["variants"].array!.last!["url"].string!)!)
+                                    } else if (type == "video") {
+                                        var url = ""
+                                        var maxBitrate = 0.0
+                                        let variants = media["video_info"]["variants"].array!
+                                        for variant in variants {
+                                            let bitrate = variant["bitrate"].double
+                                            if (bitrate != nil && bitrate! > maxBitrate) {
+                                                url = variant["url"].string!
+                                                maxBitrate = bitrate!
+                                            }
+                                        }
+                                        fetchedURLs.append(URL(string: url)!)
+                                    }
+									
 								}
-							} else if media != nil {
-								for url in media! {
-									fetchedURLs.append(URL(string: url["media_url"].string!)!)
+							} else if normal_media != nil {
+								for media in normal_media! {
+									fetchedURLs.append(URL(string: media["media_url"].string!)!)
 								}
 							}
 						}

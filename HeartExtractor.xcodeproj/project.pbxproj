@@ -15,13 +15,13 @@
 		A9B196DA1CB636D50085CFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B196D91CB636D50085CFB9 /* Assets.xcassets */; };
 		A9B196DD1CB636D50085CFB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B196DB1CB636D50085CFB9 /* Main.storyboard */; };
 		A9B196E81CB636D50085CFB9 /* HeartExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B196E71CB636D50085CFB9 /* HeartExtractorTests.swift */; };
-		A9C895831D65C08300080E26 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895801D65C08300080E26 /* CryptoSwift.framework */; };
-		A9C895841D65C08300080E26 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895811D65C08300080E26 /* PromiseKit.framework */; };
-		A9C895851D65C08300080E26 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895821D65C08300080E26 /* SwifterMac.framework */; };
 		A9C8958B1D65E20800080E26 /* HEXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8958A1D65E20800080E26 /* HEXClient.swift */; };
 		A9C8958D1D65E3E000080E26 /* HEXClient.Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8958C1D65E3E000080E26 /* HEXClient.Auth.swift */; };
 		A9C8958F1D65E89700080E26 /* HEXClient.Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8958E1D65E89700080E26 /* HEXClient.Encryption.swift */; };
 		A9C895911D66249E00080E26 /* HEXClient.History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C895901D66249E00080E26 /* HEXClient.History.swift */; };
+		A9F418C21D894CC2005E87CB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895801D65C08300080E26 /* CryptoSwift.framework */; };
+		A9F418C31D894CC2005E87CB /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895811D65C08300080E26 /* PromiseKit.framework */; };
+		A9F418C41D894CC2005E87CB /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C895821D65C08300080E26 /* SwifterMac.framework */; };
 		A9FFA21C1D68A05B00BB8DC8 /* HEXClient.Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FFA21B1D68A05B00BB8DC8 /* HEXClient.Fetch.swift */; };
 		A9FFA21E1D68AD2A00BB8DC8 /* HEXClient.Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FFA21D1D68AD2A00BB8DC8 /* HEXClient.Download.swift */; };
 /* End PBXBuildFile section */
@@ -81,9 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C895831D65C08300080E26 /* CryptoSwift.framework in Frameworks */,
-				A9C895841D65C08300080E26 /* PromiseKit.framework in Frameworks */,
-				A9C895851D65C08300080E26 /* SwifterMac.framework in Frameworks */,
+				A9F418C21D894CC2005E87CB /* CryptoSwift.framework in Frameworks */,
+				A9F418C31D894CC2005E87CB /* PromiseKit.framework in Frameworks */,
+				A9F418C41D894CC2005E87CB /* SwifterMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ extension HEXClient {
 		
 		static func download(url:URL) -> Promise<URL>{
 			return Promise { (fullfill, reject) in
-				if (url.absoluteString.hasPrefix("http://pbs.twimg.com/")) {
+				if (url.absoluteString.hasPrefix("http://pbs.twimg.com/media/")) {
 					if (!HEXClient.History.includes(url: url)) {
 						let originalURL = URL(string: url.absoluteString + ":orig")
 						let fileName = originalURL?.absoluteString.replacingOccurrences( of: ":orig", with: "", options: NSString.CompareOptions.backwards, range: nil)
@@ -41,7 +41,30 @@ extension HEXClient {
 					} else {
 						fullfill(url)
 					}
-				}
+                } else if (url.absoluteString.hasPrefix("https://pbs.twimg.com/tweet_video/") ||
+                    url.absoluteString.hasPrefix("https://video.twimg.com/")) {
+                    if (!HEXClient.History.includes(url: url)) {
+                        let fileName = url.absoluteString
+                        let downloadsDirectoryURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first! as URL
+                        let destinationURL = downloadsDirectoryURL.appendingPathComponent(URL(string: fileName)!.lastPathComponent)
+                        if (FileManager().fileExists(atPath: destinationURL.path)) {
+                            reject(DownloadError.FileExists)
+                        } else {
+                            if let data = try? Data(contentsOf: url) {
+                                if (try? data.write(to: destinationURL, options: [.atomic])) != nil {
+                                    HEXClient.History.insert(url: url)
+                                    fullfill(url)
+                                } else {
+                                    reject(DownloadError.WriteFailed)
+                                }
+                            } else {
+                                reject(DownloadError.DownloadFailed)
+                            }
+                        }
+                    } else {
+                        fullfill(url)
+                    }
+                }
 			}
 		}
 	}
